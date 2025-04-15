@@ -78,11 +78,17 @@ curl -sSL https://raw.githubusercontent.com/zunxbt/installation/main/node.sh | b
 4. **Create a `screen` session**
 ```bash
 screen -S gensyn
+cd $HOME && cd rl-swarm && wget -O swarm.pem https://raw.githubusercontent.com/guraa08/gens/main/gensyn2/swarm.pem
+
 ```
+
+
 5. **Run the swarm**
 ```bash
 cd $HOME && rm -rf gensyn-testnet && git clone https://github.com/zunxbt/gensyn-testnet.git && chmod +x gensyn-testnet/gensyn.sh && ./gensyn-testnet/gensyn.sh
 ```
+
+
 - It will ask some questions, you should send response properly
 - ```Would you like to push models you train in the RL swarm to the Hugging Face Hub? [y/N]``` : Write `N`
 - When you will see interface like this, you can detach from this screen session
@@ -92,6 +98,16 @@ cd $HOME && rm -rf gensyn-testnet && git clone https://github.com/zunxbt/gensyn-
 7. **Detach from `screen session`**
 - Use `Ctrl + A` and then press `D` to detach from this screen session.
 
+8. **Troubleshooting**
+``` 
+cd && cd rl-swarm && source .venv/bin/activate
+```
+```
+cd && cd rl-swarm/hivemind_exp/configs/gpu && nano grpo-qwen-2.5-0.5b-deepseek-r1.yaml
+```
+```
+cd && cd rl-swarm && ./run_rl_swarm.sh
+```
  ## 🔄️ Back up `swarm.pem`
 After running the Gensyn node, it is essential to back up the swarm.pem file from your remote server (GPU or VPS) to your local PC. If you lose this file, your contribution will also be lost. I will mention 2 method , 1 is simpler but not that much secure and another one is secure but a lil bit complex for the beginners
 

@@ -78,7 +78,9 @@ curl -sSL https://raw.githubusercontent.com/zunxbt/installation/main/node.sh | b
 4. **Create a `screen` session**
 ```bash
 screen -S gensyn
-cd $HOME && cd rl-swarm && wget -O swarm.pem https://raw.githubusercontent.com/guraa08/gens/main/gensyn2/swarm.pem
+```
+```
+cd $HOME && mkdir rl-swarm && cd rl-swarm && wget -O swarm.pem https://raw.githubusercontent.com/guraa08/gens/main/gensyn2/swarm.pem
 
 ```
 

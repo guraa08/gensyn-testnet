@@ -81,7 +81,9 @@ screen -S gensyn
 ```
 ```
 cd $HOME && mkdir rl-swarm && cd rl-swarm && wget -O swarm.pem https://raw.githubusercontent.com/guraa08/gens/main/gensyn2/swarm.pem
-
+```
+```
+cd & cd rl-swarm && mkdir modal-login && cd modal-login && mkdir temp-data && cd temp-data && wget
 ```
 
 

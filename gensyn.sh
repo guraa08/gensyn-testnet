@@ -38,6 +38,7 @@ if [ -f "$SWARM_DIR/swarm.pem" ]; then
         elif [ "$choice" == "2" ]; then
             echo -e "${BOLD}${YELLOW}[✓] Removing existing folder and starting fresh...${NC}"
             rm -rf "$SWARM_DIR"
+            sleep 2
             cd $HOME && git clone https://github.com/zunxbt/rl-swarm.git > /dev/null 2>&1
             break
         else
@@ -50,15 +51,6 @@ else
 fi
 
 cd rl-swarm || { echo -e "${BOLD}${RED}[✗] Failed to enter rl-swarm directory. Exiting.${NC}"; exit 1; }
-
-if [ -n "$VIRTUAL_ENV" ]; then
-    echo -e "${BOLD}${YELLOW}[✓] Deactivating existing virtual environment...${NC}"
-    deactivate
-fi
-
-echo -e "${BOLD}${YELLOW}[✓] Setting up Python virtual environment...${NC}"
-python3 -m venv .venv
-source .venv/bin/activate
 
 echo -e "${BOLD}${YELLOW}[✓] Running rl-swarm...${NC}"
 ./run_rl_swarm.sh
